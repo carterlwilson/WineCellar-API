@@ -1,8 +1,18 @@
 var express = require('express')
 var router = express.Router()
+var models = require('../models')
 
 router.get('/', function(req, res) {
-    res.send('base route for wineCellar')
+    console.log('Starting bottles route')
+    try {
+        models['bottle'].findAll().then(function(bottles){
+            res.send({
+                bottleList: bottles
+            })
+        })
+    } catch(err) {
+        res.send('Exception caught! : ' + err.message)
+    }
 })
 
 module.exports = router
