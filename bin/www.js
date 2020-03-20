@@ -3,7 +3,7 @@ var debug = require('debug')('express-sequelize');
 var http = require('http');
 var models = require('../models');
 
-var port = normalizePort(process.env.PORT || '3000')
+var port = normalizePort(process.env.PORT || '5858')
 app.set('port', port)
 
 var server = http.createServer(app)

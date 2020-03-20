@@ -8,7 +8,8 @@ router.post('/', function(req, res) {
     models.bottle.create({
         winery_name: req.body.winery_name,
         vintage_year: req.body.vintage_year,
-        varietal: req.body.varietal
+        varietal: req.body.varietal,
+        username: req.body.username.toLowerCase()
     }).then(function() {
         console.log('saved new bottle')
         res.redirect('/')
