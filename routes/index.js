@@ -5,7 +5,11 @@ var models = require('../models')
 router.get('/', function(req, res) {
     console.log('Starting bottles route')
     try {
-        models['bottle'].findAll().then(function(bottles){
+        models['bottle'].findAll({
+            where: {
+                username: req.body.username.toLowerCase()
+            }
+        }).then(function(bottles){
             res.send({
                 bottleList: bottles
             })
