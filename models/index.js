@@ -10,6 +10,7 @@ var sequelize = new Sequelize(Strings.database, Strings.username,Strings.passwor
     })
 
 db['bottle'] = sequelize.import(__dirname + "/bottle.js")
+db['user'] = sequelize.import(__dirname + "/user.js")
 
 db.sequelize = sequelize
 db.Sequelize = Sequelize

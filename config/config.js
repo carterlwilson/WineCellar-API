@@ -1,6 +1,6 @@
 module.exports = {
     development: {
-        port: 5432,
+        port: 5832,
         dialect: 'postgres',
         database: 'winecellar',
         username: 'postgres',
