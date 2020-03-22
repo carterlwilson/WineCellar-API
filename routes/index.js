@@ -4,10 +4,11 @@ var models = require('../models')
 
 router.get('/', function(req, res) {
     console.log('Starting bottles route')
+    let name = req.query.username;
     try {
         models['bottle'].findAll({
             where: {
-                username: req.body.username.toLowerCase()
+                username: name
             }
         }).then(function(bottles){
             res.send({
